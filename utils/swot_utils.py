@@ -7,7 +7,7 @@ import numpy as np
 def IQR_filter(arr):
   '''
   param: 1d or 2d np.array(), the swot height.
-  retrun: numpy MaskedArray, the filtered swot height.
+  return: numpy MaskedArray, the filtered swot height.
   '''
   Q1, Q3 = np.nanpercentile(arr, (25, 75))
   IQR = Q3 - Q1

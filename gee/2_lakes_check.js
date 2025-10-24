@@ -1,5 +1,5 @@
 // author: xin luo
-// created: 2025.2.10
+// created: 2025.10.11
 // des: check the selected images
 
 ////////////////////////////////////////////////////////////////
@@ -19,10 +19,10 @@ var lake_yangzonghai_outline = ee.Geometry.Rectangle(102.91, 24.82, 103.05, 25.0
 var lake_yangzonghai = ee.Image('COPERNICUS/S2_SR/20240415T033539_20240415T034512_T47RRH').clip(lake_yangzonghai_outline)
 print('yangzonghai:',lake_yangzonghai)
 
-// xinyun
+// xingyun
 var lake_xinyun_outline = ee.Geometry.Rectangle(102.69, 24.28, 102.88, 24.41)
 var lake_xinyun = ee.Image('COPERNICUS/S2_SR/20240415T033539_20240415T034512_T47RRH').clip(lake_xinyun_outline)
-print('xinyun:',lake_xinyun)
+print('xingyun:',lake_xinyun)
 
 // qilu
 var lake_qilu_outline =  ee.Geometry.Rectangle(102.69, 24.1, 102.85, 24.23)
@@ -51,10 +51,10 @@ print('lugu:',lake_lugu)
 
 
 
-// visualization
 // Map.centerObject(region, 9);
 Map.setCenter(102.5, 24.7, 8);
 var empty = ee.Image().byte();
+
 // dianchi
 var lake_dianchi_outline = empty.paint({
     featureCollection: lake_dianchi_outline, color: 1, width: 3});
@@ -108,11 +108,6 @@ var lake_lugu_outline = empty.paint({
     featureCollection: lake_lugu_outline, color: 1, width: 3});
 Map.addLayer(lake_lugu_outline, {palette: '0000FF'}, 'lake_lugu_outline');
 Map.addLayer(lake_lugu, {bands:['B4','B3','B2'], max:3000, min:0}, 'lake_lugu');
-
-
-
-
-
 
 
 
