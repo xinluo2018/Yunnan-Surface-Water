@@ -2,5 +2,5 @@ __pycache__/
 **/.DS_Store
 vscode/
 data/*
+!data/eva_data
 documents/*
-!data/eva_data/*
